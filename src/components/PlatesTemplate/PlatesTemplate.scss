@@ -1,0 +1,37 @@
+.plate {
+    background-color: var(--background-primary);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    min-width: 230px;
+    &__title {
+        font-size: var(--fontSize-subtitle);
+        color: var(--text-primary);
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 30px;
+        align-items: center;
+    }
+    &__icon {
+        display: grid;
+        place-content: center;
+    }
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid var(--background-acent);
+    color: var(--background-acent);
+    padding: 7px;
+    border-radius: var(--border-radius);
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: var(--fontSize-text);
+    &:hover {
+        background-color: var(--background-acent);
+        color: var(--background-primary);
+    }
+}

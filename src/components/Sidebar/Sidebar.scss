@@ -1,0 +1,74 @@
+.sidebar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    width: 15%;
+    min-width: 280px;
+    height: 100vh;
+    padding: 20px 0 20px 10px;
+    background: var(--background-acent);
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    &_tablet {
+        width: 5%;
+        min-width: 80px;
+    }
+    &_mobile {
+        position: fixed;
+        transform: translate(0px);
+        z-index: 9999;
+        width: 70%;
+        &_hidden {
+            transform: translate(-100%);
+        }
+    }
+    &__logo-box {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding-left: 12px;
+    }
+    &__logo-img {
+        width: 35px;
+        border-radius: 10px;
+    }
+    &__logo-title {
+        font-weight: 900;
+        color: var(--background-primary);
+        font-size: var(--fontSize-text);
+        &_tablet {
+            color: transparent;
+        }
+    }
+    &__pro {
+        background-color: var(--background-primary);
+        border-radius: var(--border-radius);
+        padding: 30px;
+        text-align: center;
+        white-space: normal;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        &_hidden {
+            display: none;
+        }
+    }
+    &__pro-title {
+        color: var(--background-acent);
+        font-size: var(--fontSize-subtitle);
+    }
+    &__pro-subtitle {
+        color: var(--text-primary);
+        padding: 10px 0 20px 0;
+        font-size: var(--fontSize-text);
+    }
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
+}

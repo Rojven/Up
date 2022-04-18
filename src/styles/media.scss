@@ -1,0 +1,27 @@
+@media(max-width: 1200px) {
+    .dashboard {  
+        grid-template-areas: 
+            "plate_one plate_one plate_one plate_one plate_one plate_one plate_one plate_one"
+            "plate_two plate_two plate_two plate_two plate_three plate_three plate_three plate_three"
+            "plate_four plate_four plate_four plate_four plate_four plate_five plate_five plate_five"
+            "plate_six plate_six plate_six plate_six plate_six plate_five plate_five plate_five"
+            "plate_seven plate_seven plate_seven plate_seven plate_eight plate_eight plate_eight plate_eight";
+    }
+}
+
+@media(max-width: 900px) {
+    .dashboard {  
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-areas:
+            "plate_one plate_one plate_one plate_one plate_one plate_one plate_one plate_one"
+            "plate_two plate_two plate_two plate_two plate_two plate_two plate_two plate_two"
+            "plate_three plate_three plate_three plate_three plate_three plate_three plate_three plate_three"
+            "plate_three plate_three plate_three plate_three plate_three plate_three plate_three plate_three"
+            "plate_four plate_four plate_four plate_four plate_four plate_four plate_four plate_four"
+            "plate_five plate_five plate_five plate_five plate_five plate_five plate_five plate_five"
+            "plate_five plate_five plate_five plate_five plate_five plate_five plate_five plate_five"
+            "plate_six plate_six plate_six plate_six plate_six plate_six plate_six plate_six"
+            "plate_seven plate_seven plate_seven plate_seven plate_seven plate_seven plate_seven plate_seven"
+            "plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight";
+    }
+}

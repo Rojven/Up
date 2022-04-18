@@ -1,0 +1,30 @@
+.header {
+    background-color: var(--background-primary);
+    min-height: 7vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    &_mobile {
+        flex-direction: row-reverse;
+        background-color: var(--background-secondary);
+        height: 100vh;
+        align-items: start;
+    }
+    &__actions {
+        display: flex;
+        gap: 10px;
+    }
+    &__toggler {
+        width: 30px;
+        height: 30px;
+        color: var(--text-primary);
+        cursor: pointer;
+        &_active {
+            transform: scale(-1, 1);
+        }
+    }
+}

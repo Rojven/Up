@@ -1,0 +1,20 @@
+.todays {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    &__item {
+        width: 30%;
+        height: 200px;
+        min-width: 200px;
+        border-radius: var(--border-radius);
+        &_one {
+            background-color: var(--background-alert);
+        }
+        &_two {
+            background-color: var(--background-caution);
+        }
+        &_three {
+            background-color: var(--background-accept);
+        }
+    }
+}
