@@ -1,5 +1,6 @@
 {
   "name": "upsell",
+  "homepage": "https://rojven.github.io/upsell",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
