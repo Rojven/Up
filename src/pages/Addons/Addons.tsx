@@ -1,34 +1,63 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
+import { TabPanel } from 'react-tabs';
+import { AiOutlineSearch } from 'react-icons/ai';
 
+import PlatesTemplate from '../../components/PlatesTemplate/PlatesTemplate';
 import TabsTemplate from '../../components/TabsTemplate/TabsTemplate';
+//import AddonsTable from '../../components/AddonsTable/AddonsTable';
 
 import './Addons.scss';
 
-const addonsSelectorData = [
-    {text: 'On-Page Add-ons'},
-    {text: 'Popup Add-ons'}
-]
-
-
 const Addons: FC = () => {
+
+    const addonsTabsData = useMemo(
+        () => [
+            {text: 'Product Add-Ons'},
+            {text: 'Collection Add-Ons'},
+            {text: 'All Products Add-Ons'}
+        ],
+        []
+    )
+
+    const addonsTemplatesData = useMemo(
+        () => [
+            {title: 'On-Page Add-Ons'},
+            {title: 'Popup Add-Ons'}
+        ],
+        []
+    )
 
     return (
         <section className='addons'>
-            <TabsTemplate clazz='notification__tabs' tabsList={addonsSelectorData}>gg</TabsTemplate>
-            {/* <div className='addons__selector'>
-                {addonsSelectorData.map((tab, i) => 
-                    <div 
-                        key={i}
-                        className={tab.state ? 'addons__tab addons__tab_active' : 'addons__tab'}
-                        onClick={stateToggler}
+            {addonsTemplatesData.map((template, i) => 
+                <PlatesTemplate 
+                    title={template.title} 
+                    key={i}
+                >
+                    <TabsTemplate 
+                        clazz='notification__tabs' 
+                        tabsList={addonsTabsData}
                     >
-                        {tab.text}
-                    </div>
-                )}
-            </div> */}
-            {/* <div className='addons__content'>
-
-            </div> */}
+                        {addonsTabsData.map((tab, i) =>
+                            <TabPanel key={i}>
+                                <div className='addons__content'>
+                                    <div className='addons__search'>
+                                        <input 
+                                            type="text" 
+                                            className='input'
+                                            placeholder='type to search...'
+                                        />
+                                        <AiOutlineSearch/>
+                                    </div>
+                                    <button className='button'>Add Add-Ons</button>
+                                    <h2>{tab.text}</h2>
+                                    {/* <AddonsTable/> */}
+                                </div>
+                            </TabPanel>
+                        )}
+                    </TabsTemplate>
+                </PlatesTemplate>
+            )}
         </section>
     )
 }

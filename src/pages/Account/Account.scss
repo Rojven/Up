@@ -1,0 +1,9 @@
+.account {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    &__wrapper {
+        width: 49%;
+    }
+}

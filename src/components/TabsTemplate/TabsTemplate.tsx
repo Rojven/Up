@@ -1,5 +1,5 @@
 import { FC, ReactNode } from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList } from 'react-tabs';
 
 import './TabsTemplate.scss';
 
@@ -24,15 +24,7 @@ const TabsTemplate: FC<TabsTemplateProps> = ({ clazz, tabsList, children }) => {
                     </Tab>
                 )}
             </TabList>
-            <TabPanel>
-                {children}
-            </TabPanel>
-            <TabPanel>
-                {children}
-            </TabPanel>
-            <TabPanel>
-                {children}
-            </TabPanel>
+            {children}
         </Tabs>
         
     )

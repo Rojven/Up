@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { TabPanel } from 'react-tabs';
 
 import PlatesTemplate from '../PlatesTemplate/PlatesTemplate';
 import TabsTemplate from '../TabsTemplate/TabsTemplate';
@@ -23,7 +24,11 @@ const Notification: FC<NotificationProps> = ({ notification }) => {
                     clazz='notification__tabs' 
                     tabsList={notificationTabsData}
                 >
-                    
+                    {notificationTabsData.map((tab, i) =>
+                        <TabPanel key={i}>
+                            <h2>{tab.text}</h2>
+                        </TabPanel>
+                    )}
                 </TabsTemplate>
             </PlatesTemplate>
         </div>  

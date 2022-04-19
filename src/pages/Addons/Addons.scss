@@ -1,31 +1,8 @@
 .addons {
-    width: 100%;
-    border-radius: var(--border-radius);
-    background-color: var(--background-primary);
-    &__selector {
-        display: flex;
-        justify-content: space-between;
-        height: 6vh;
-        background-color: var(--background-acent);
-        border-top-left-radius: var(--border-radius);
-        border-top-right-radius: var(--border-radius);
-        align-items: center;
-    }
-    &__tab {
-        color: var(--background-primary);
-        font-size: var(--fontSize-subtitle);
-        font-weight: 900;
-        width: 100%;
-        padding: 30px;
-        border-radius: 30px;
-        &_active {
-            background-color: var(--background-secondary);
-            color: var(--background-acent);
-            padding: 12px;
-        }
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     &__content {
-        padding: 30px;
-        min-height: 40vh;
+        padding-top: 30px;
     }
 }
