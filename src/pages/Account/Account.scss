@@ -1,9 +1,84 @@
 .account {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 30px;
-    &__wrapper {
-        width: 49%;
+    &__profile {
+        width: 35%;
+        height: 85vh;
+        background-color: var(--background-primary);
+        border-radius: var(--border-radius);
+    }
+    &__plans {
+        width: 65%;
+    }
+    &__plans-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__plans-header {
+        display: flex;
+        justify-content: space-between;
+        color: var(--text-primary);
+        font-size: var(--fontSize-title);
+        h4 {
+            text-align: right;
+            font-size: var(--fontSize-subtitle);
+        }
+        p {
+            font-size: var(--fontSize-text);
+            color: var(--text-secondary);
+        }
+        &_pro {
+            color: inherit;
+            p {
+                color: inherit;
+            }
+        }
+    }
+    &__plans-divider {
+        height: 3px;
+        width: 20px;
+        background-color: var(--background-acent);
+        margin-top: 5px;
+        border-radius: var(--border-radius);
+    }
+    &__plans-list {
+        padding: 60px 0;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    &__plans-list-header {
+        font-weight: 900;
+        padding-top: 100px;
+    }
+    &__plans-list-item {
+        font-size: var(--fontSize-text);
+        display: flex;
+        gap: 30px;
+        align-items: center;
+    }
+    &__plans-list-icon {
+        font-size: var(--fontSize-subtitle);
+    }
+    &__plans-footer {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__plans-active {
+        background-color: var(--background-accept);
+        padding: 7px 10px;
+        border-radius: var(--border-radius);
+    }
+}
+
+.plate_account {
+    width: 48%;
+    color: var(--text-secondary);
+    &:last-child {
+        background-color: var(--background-acent);
+        color: var(--background-primary);
     }
 }

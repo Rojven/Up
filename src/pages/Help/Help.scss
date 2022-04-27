@@ -1,7 +1,73 @@
 .help {
-    &__tips {
+    &__wrapper {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+        gap: 30px;
     }
+    &__instr {
+        font-size: var(--fontSize-text);
+        color: var(--text-secondary);
+    }
+    &__img-box {
+        width: 40%;
+        margin: 0 auto;
+    }
+    &__img {
+        width: 100%;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 30px;
+    }
+    &__list-item {
+        align-items: center;
+        display: flex;
+        gap: 10px;
+        height: 50px;
+        font-size: var(--fontSize-text);
+        color: var(--text-primary);
+        font-weight: 900;
+        cursor: pointer;
+    }
+    &__tips {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 30px;
+        width: 60%;
+    }
+    &__tips-upper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+    &__tips-title {
+        color: var(--text-primary);
+        font-size: var(--fontSize-text);
+    }
+    &__tips-icon {
+        color: rgb(230, 188, 37);
+    }
+    &__tips-text {
+        color: var(--text-secondary);
+        font-size: var(--fontSize-text);
+    }
+}
+
+.plate_tips {
+    width: 47%;
+}
+
+.plate_help {
+    width: 38%;
+    min-width: 280px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+}
+
+.g {
+    display: flex;
 }

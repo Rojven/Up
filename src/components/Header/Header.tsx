@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiMenuFoldLine } from 'react-icons/ri';
-import { IoMdNotifications } from 'react-icons/io';
-import { MdAccountCircle } from 'react-icons/md';
+import { IoIosNotifications } from 'react-icons/io';
+import { IoPersonCircleSharp } from 'react-icons/io5';
 
 import Notification from '../Notification/Notification';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
@@ -34,9 +34,9 @@ const Header: FC<HeaderProps> = ({ state, stateToggler }) => {
             />
             <div className='header__actions'>
                 <Link to='/account'>
-                    <MdAccountCircle className='header__toggler'/>
+                    <IoPersonCircleSharp className='header__toggler'/>
                 </Link>
-                <IoMdNotifications 
+                <IoIosNotifications 
                     className='header__toggler'
                     onClick={modalsToggler}
                 />

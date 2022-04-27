@@ -1,3 +1,9 @@
 export { default as Header } from './Header/Header';
 export { default as Sidebar } from './Sidebar/Sidebar';
 export { default as TodaysSales } from './TodaysSales/TodaysSales';
+export { default as OnPageSettings } from './OnPageSettings/OnPageSettings';
+export { default as PopupSettings } from './PopupSettings/PopupSettings';
+export { default as CartPageSettings } from './CartPageSettings/CartPageSettings';
+export { default as CommonSettings } from './CommonSettings/CommonSettings';
+export { default as PreferencesSettings } from './PreferencesSettings/PreferencesSettings';
+export { default as AdvancedSettings } from './AdvancedSettings/AdvancedSettings';

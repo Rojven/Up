@@ -18,20 +18,19 @@ const notificationTabsData = [
 
 const Notification: FC<NotificationProps> = ({ notification }) => {
     return (
-        <div className={notification ? 'notification notification_active' : 'notification'}>
-            <PlatesTemplate title='Notifications'>
-                <TabsTemplate 
-                    clazz='notification__tabs' 
-                    tabsList={notificationTabsData}
-                >
-                    {notificationTabsData.map((tab, i) =>
-                        <TabPanel key={i}>
-                            <h2>{tab.text}</h2>
-                        </TabPanel>
-                    )}
-                </TabsTemplate>
-            </PlatesTemplate>
-        </div>  
+        <PlatesTemplate plateClass={notification ? 'plate_notification plate_notification_active' : 'plate_notification'}>
+            <TabsTemplate 
+                tabClass='tabs tabs_notification' 
+                tabsList={notificationTabsData}
+                notificationClass='react-tabs__tab react-tabs__tab_notification'
+            >
+                {notificationTabsData.map((tab, i) =>
+                    <TabPanel key={i}>
+                        <h2>{tab.text}</h2>
+                    </TabPanel>
+                )}
+            </TabsTemplate>
+        </PlatesTemplate>  
     )
 }
 

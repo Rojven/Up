@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 30px;
+    box-shadow: var(--box-shadow);
     &_mobile {
         flex-direction: row-reverse;
         background-color: var(--background-secondary);

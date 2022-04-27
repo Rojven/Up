@@ -8,18 +8,22 @@ interface TabsListArray {
 }
 
 interface TabsTemplateProps {
-    clazz: string;
+    tabClass: string;
     tabsList: TabsListArray[];
     children: ReactNode;
+    notificationClass?: string;
 }
 
-const TabsTemplate: FC<TabsTemplateProps> = ({ clazz, tabsList, children }) => {
+const TabsTemplate: FC<TabsTemplateProps> = ({ tabClass, tabsList, children, notificationClass }) => {
 
     return (
         <Tabs>
-            <TabList className={clazz}>
+            <TabList className={tabClass}>
                 {tabsList.map((tab, i) => 
-                    <Tab key={i}>
+                    <Tab 
+                        key={i}
+                        className={notificationClass}
+                    >
                         {tab.text}
                     </Tab>
                 )}

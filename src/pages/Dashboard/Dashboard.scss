@@ -1,36 +1,9 @@
-.dashboard {  
-    display: grid; 
-    grid-template-columns: repeat(8, 1fr); 
-    grid-template-rows: repeat(5, 1fr); 
-    gap: 30px 30px; 
-    grid-template-areas: 
-        "plate_one plate_one plate_one plate_one plate_one plate_two plate_two plate_two"
-        "plate_three plate_three plate_three plate_three plate_four plate_four plate_four plate_four"
-        "plate_five plate_five plate_five plate_six plate_six plate_six plate_six plate_six"
-        "plate_five plate_five plate_five plate_seven plate_seven plate_seven plate_seven plate_seven"
-        "plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight plate_eight";  
-    &__plate-one {
-        grid-area: plate_one;
+.dashboard { 
+    &__wrapper {
+        display: flex;
+        gap: 30px;
     }
-    &__plate-two {
-        grid-area: plate_two;
-    }
-    &__plate-three {
-        grid-area: plate_three;
-    }
-    &__plate-four {
-        grid-area: plate_four;
-    }
-    &__plate-five {
-        grid-area: plate_five;
-    }
-    &__plate-six {
-        grid-area: plate_six;
-    }
-    &__plate-seven {
-        grid-area: plate_seven;
-    }
-    &__plate-eight {
-        grid-area: plate_eight;
+    &__item {
+        padding-bottom: 30px;
     }
 }

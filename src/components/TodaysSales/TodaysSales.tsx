@@ -15,7 +15,7 @@ const todaysSalesData = [
 
 const TodaysSales: FC = () => {
     return (
-        <PlatesTemplate title="Today's Sales">
+        <PlatesTemplate>
             <ul className='todays'>
                 {todaysSalesData.map((todaysItem, i) =>
                     <li 
