@@ -1,6 +1,6 @@
 .addons {
     &__content {
-        padding-top: 20px;
+        padding-top: 30px;
         display: flex;
         flex-direction: column;
     }
@@ -20,22 +20,11 @@
     &__main-img {
         width: 150px;
     }
-    &__main-title {
-        color: var(--text-primary);
-        font-size: var(--fontSize-subtitle);
-    }
     &__search {
         height: 50px;
         max-width: 600px;
         min-width: 230px;
         position: relative;
-        .search-icon {
-            position: absolute;
-            top: 13px;
-            right: 15px;
-            font-size: var(--fontSize-subtitle);
-            color: var(--text-primary);
-        }
     }
     &__table {
         width: 100%;
@@ -43,30 +32,17 @@
         padding: 30px;  
         border-radius: var(--border-radius);
     }
-    &__table-upper {
-        display: flex;
-        justify-content: space-between;
-        font-size: var(--fontSize-subtitle);
-        color: var(--text-primary);
-        font-weight: 900;
-        align-items: center;
-        padding-bottom: 30px;
-    }
-    &__table-row {
+    &__table-header {
         display: flex;
         gap: 20px;
-        &_main {
-            padding-bottom: 20px;
-        }
+        padding: 30px 0;
     }
-    &__table-wrapper {
-        padding-top: 30px;
-    }
-    &__table-item {
+    &__table-header-item {
         background-color: var(--background-primary);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         padding: 15px 30px;
+        font-weight: 900;
         &:nth-child(1) {
             flex: 1;
             text-align: center;
@@ -85,24 +61,6 @@
         }
         &:nth-child(4) {
             flex: 2;
-        }
-        &_header {
-            font-size: var(--fontSize-text);
-            color: var(--text-primary); 
-            font-weight: 900;
-        }
-        &_input {
-            background-color: transparent;
-            box-shadow:none;
-            padding: 0;
-            textarea,
-            input {
-                resize: none;
-                background-color: var(--background-primary);
-                border-radius: var(--border-radius);
-                box-shadow: var(--box-shadow);
-                padding: 30px 30px;
-            }
         }
     }
     /* &__table-placeholder {

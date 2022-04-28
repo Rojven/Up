@@ -1,28 +1,25 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import './SidebarMenuItem.scss';
+import { IMenuItem } from '../../types/types';
 
 interface SidebarMenuItemProps {
-    name: string;
-    path: string;
-    icon: ReactNode;
+    menuItem: IMenuItem;
     state: boolean;
     setState: (state: boolean) => void;
 }
-
-const SidebarMenuItem: FC<SidebarMenuItemProps> = ({ name, path, icon, state, setState }) => {
+const SidebarMenuItem: FC<SidebarMenuItemProps> = ({ menuItem, state, setState }) => {
     return (
         <li>
             <NavLink
                 end
-                to={path}
+                to={menuItem.path}
                 className={({ isActive }) => isActive ? 'sidebar__link sidebar__link_active' : 'sidebar__link'}
                 onClick={() => setState(false)}    
             >   
-                <span className='sidebar__icon'>{icon}</span>
-                <span className={state ? 'sidebar__text' : 'sidebar__text sidebar__text_tablet'}>{name}</span>
-                  
+                <span className='icon icon_sidebar'>{menuItem.icon}</span>
+                <span className={state ? 'sidebar__text' : 'sidebar__text sidebar__text_tablet'}>{menuItem.name}</span>
+                
             </NavLink>  
         </li>
     )

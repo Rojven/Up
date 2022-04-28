@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react';
 
-import PlatesTemplate from '../../components/PlatesTemplate/PlatesTemplate';
+import { PageTemplate, PlatesTemplate } from '../../components';
 
 import './Apps.scss';
 
@@ -17,29 +17,29 @@ const Apps: FC = () => {
     )
 
     return (
-        <section className='apps-page'>
-            <h3 className='section-title section-title_addons'>Apps</h3> 
-            <p className='section-subtitle'>Try out our new apps right over here</p>
-            <div className="apps-page__wrapper">
-                {appsPageData.map((app, i) =>
-                    <PlatesTemplate 
-                        plateClass='plate_apps'
-                        key={i}
-                    >
-                        <div className='apps-page__img-box'>
-                            <img 
-                                src={app.imgLink}
-                                alt=""
-                                className='apps-page__img'
-                            />
-                        </div>
-                        <h3 className='apps-page__title'>{app.appTitle}</h3>
-                        <p className='apps-page__descr'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repudiandae perferendis eos. Soluta, totam? Nostrum minima odit officiis doloremque ullam, evenie!</p>
-                        <button className='button'>Get started</button>
-                </PlatesTemplate>
-                )}
-            </div>
-        </section>
+        <PageTemplate
+            title='Apps'
+            subtitle='Try out our new apps right over here'
+            contentClassName='section__content_apps apps'
+        >
+            {appsPageData.map((app, i) =>
+                <PlatesTemplate 
+                    plateClass='plate_apps'
+                    key={i}
+                >
+                    <div className='apps__img-box'>
+                        <img 
+                            src={app.imgLink}
+                            alt=""
+                            className='apps__img'
+                        />
+                    </div>
+                    <h3 className='apps__title'>{app.appTitle}</h3>
+                    <p className='apps__descr'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere repudiandae perferendis eos. Soluta, totam? Nostrum minima odit officiis doloremque ullam, evenie!</p>
+                    <button className='button'>Get started</button>
+            </PlatesTemplate>
+            )}
+        </PageTemplate> 
     )
 }
 

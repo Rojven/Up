@@ -1,11 +1,27 @@
 import { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { MdSpaceDashboard, MdAccountCircle } from 'react-icons/md';
+import { IoApps, IoSettingsSharp, IoBagAdd, IoHelpCircleSharp } from 'react-icons/io5';
+import { SiGoogleanalytics } from 'react-icons/si';
 
-import logo from '../../assets/img/logo.webp';
-import SidebarMenu from '../SidebarMenu/SidebarMenu';
+import { IMenuItem } from '../../types/types';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
+import logo from '../../assets/img/logo.webp';
+import ListTemplate from '../ListTemplate/ListTemplate';
+import SidebarMenuItem from '../SidebarMenuItem/SidebarMenuItem';
 
 import './Sidebar.scss';
+
+const SidebarMenuData = [
+    {name: 'Dashboard', path: '/', icon: <MdSpaceDashboard/>, id: 1},
+    {name: 'Apps', path: '/apps', icon: <IoApps/>, id: 2},
+    {name: 'Add-Ons', path: '/addons', icon: <IoBagAdd/>, id: 3},
+    {name: 'Analytics', path: '/analytics', icon: <SiGoogleanalytics/>, id: 4},
+    {name: 'Account', path: '/account', icon: <MdAccountCircle/>, id: 5},
+    {name: 'Help', path: '/help', icon: <IoHelpCircleSharp/>, id: 6},
+    {name: 'Settings', path: '/settings', icon: <IoSettingsSharp/>, id: 7}
+]
+
 
 interface SidebarProps {
     state: boolean;
@@ -45,9 +61,16 @@ const Sidebar: FC<SidebarProps> = ({ state, setState }) => {
                     </p>
                 </div>
             </Link>
-            <SidebarMenu 
-                state={state} 
-                setState={setState}
+            <ListTemplate
+                items={SidebarMenuData}
+                renderItems={(menuItem: IMenuItem) => 
+                    <SidebarMenuItem 
+                        menuItem={menuItem} 
+                        state={state}
+                        setState={setState}
+                        key={menuItem.id}
+                    />
+                }
             />
             <div className={mobile 
             ? 'sidebar__pro' 

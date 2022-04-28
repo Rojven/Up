@@ -1,0 +1,44 @@
+.section {
+    &__title {
+        font-size: var(--fontSize-title);
+        color: var(--text-primary);
+        line-height: 1;
+    }
+    &__subtitle {
+        color: var(--text-secondary);
+        font-size: var(--fontSize-text);
+        padding-top: 10px;
+    }
+    &__content {
+        margin-top: 30px;
+        display: flex;
+        gap: 30px;
+        &_account,
+        &_apps {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        &_addons,
+        &_dashboard,
+        &_settings {
+            display: block;
+            gap: 0;
+        }
+        &_analytics {
+            flex-direction: column;
+        }
+    }
+    &__content-title {
+        color: var(--text-primary);
+        font-size: var(--fontSize-subtitle);
+        &_addons {
+            padding-bottom: 30px;
+        }
+        &_table {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 900;
+        }
+    }
+}

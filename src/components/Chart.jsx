@@ -58,8 +58,8 @@ const data = [
 
 const Chart = () => {
     return (
-        <div style={{height: '500px'}}>
-          <ResponsiveContainer width="100%" height="100%">
+        <div style={{height: '500px', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <ResponsiveContainer width="70%" height="70%">
         <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
           <RadialBar
             minAngle={15}

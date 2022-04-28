@@ -1,19 +1,22 @@
 import { FC } from 'react';
 import Masonry from 'react-masonry-css';
 
-import { TodaysSales } from '../../components';
+import { TodaysSales, PageTemplate, PlatesTemplate } from '../../components';
 import Chart from '../../components/Chart';
+import Chart3 from '../../components/Chart3';
+import Chart2 from '../../components/Chart2';
+import Chart4 from '../../components/Chart4';
 
 import './Dashboard.scss';
 
 const dashboardData = [
     {child: <TodaysSales/>},
-    {child: <div><h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque vitae, nobis perferendis odit labore asperiores quisquam provident explicabo pariatur ipsum? Recusandae commodi maxime aut at nostrum dolore hic minus doloremque.</h1></div>},
+    {child: <PlatesTemplate><Chart3/></PlatesTemplate>},
+    {child: <PlatesTemplate><Chart/></PlatesTemplate>},
     {child: <TodaysSales/>},
-    {child: <Chart/>},
-    {child: <Chart/>},
+    {child: <PlatesTemplate><Chart2/></PlatesTemplate>},
     {child: <TodaysSales/>},
-    {child: <div><h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque vitae, nobis perferendis odit labore asperiores quisquam provident explicabo pariatur ipsum? Recusandae commodi maxime aut at nostrum dolore hic minus doloremque.</h1></div>},
+    {child: <PlatesTemplate><Chart4/></PlatesTemplate>},
 ]
 
 const breakpointObj = {
@@ -26,9 +29,11 @@ const breakpointObj = {
 
 const Dashboard: FC = () => {
     return (
-        <section className='dashboard'>
-            <h3 className='section-title section-title_addons'>Dashboard</h3> 
-            <p className='section-subtitle'>All essential information in one place</p>
+        <PageTemplate
+            title='Dashboard'
+            subtitle='All essential information in one place'
+            contentClassName='section__content_dashboard dashboard'
+        >
             <Masonry
                 breakpointCols={breakpointObj}
                 className="dashboard__wrapper"
@@ -39,7 +44,7 @@ const Dashboard: FC = () => {
                     </div>
                 )}
             </Masonry>
-        </section>
+        </PageTemplate>
     )
 }
 

@@ -7,3 +7,7 @@ export { default as CartPageSettings } from './CartPageSettings/CartPageSettings
 export { default as CommonSettings } from './CommonSettings/CommonSettings';
 export { default as PreferencesSettings } from './PreferencesSettings/PreferencesSettings';
 export { default as AdvancedSettings } from './AdvancedSettings/AdvancedSettings';
+export { default as PageTemplate } from './PageTemplate/PageTemplate';
+export { default as PlatesTemplate } from './PlatesTemplate/PlatesTemplate';
+export { default as TabsTemplate } from './TabsTemplate/TabsTemplate';
+export { default as AddonsListItem } from './AddonsListItem/AddonsListItem';

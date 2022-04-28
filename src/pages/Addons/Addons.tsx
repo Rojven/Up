@@ -4,8 +4,9 @@ import { AiOutlineSearch} from 'react-icons/ai';
 import { CgSortAz } from 'react-icons/cg';
 import { MdArrowForwardIos } from 'react-icons/md';
 
-import PlatesTemplate from '../../components/PlatesTemplate/PlatesTemplate';
-import TabsTemplate from '../../components/TabsTemplate/TabsTemplate';
+import { IAddonsTableContentItem } from '../../types/types';
+import ListTemplate from '../../components/ListTemplate/ListTemplate';
+import { PageTemplate, TabsTemplate, PlatesTemplate, AddonsListItem } from '../../components';
 
 import './Addons.scss';
 
@@ -38,10 +39,32 @@ const Addons: FC = () => {
         []
     )
 
+    const addonsTableHeaderData = useMemo(
+        () => [
+            {title: <input type='checkbox'/>},
+            {title: 'Item'},
+            {title: 'Description'},
+            {title: 'Discount'},
+        ],
+        []
+    )
+
+    const addonsTableContentData = useMemo(
+        () => [
+            {id: 1, title: 'Item 1', imgUrl: ''},
+            {id: 2, title: 'Item 2', imgUrl: ''},
+            {id: 3, title: 'Item 3', imgUrl: ''},
+            {id: 4, title: 'Item 4', imgUrl: ''},
+        ],
+        []
+    )
+
     return (
-        <section className='addons'>
-            <h3 className='section-title section-title_addons'>Add-Ons</h3> 
-            <p className='section-subtitle'>Manage your On-Page and Popup Add-Ons here</p>
+        <PageTemplate
+            title='Add-Ons'
+            subtitle='Manage your On-Page and Popup Add-Ons here'
+            contentClassName='section__content_addons addons'
+        >
             <TabsTemplate
                 tabClass='tabs tabs_addons' 
                 tabsList={addonsFirstTabsData}
@@ -49,7 +72,7 @@ const Addons: FC = () => {
                 {addonsFirstTabsData.map((tabFirst, i) => 
                     <TabPanel key={i}>
                         <TabsTemplate 
-                            tabClass='tabs tabs_addons' 
+                            tabClass='tabs' 
                             tabsList={addonsSecondTabsData}
                             key={i}
                         >
@@ -57,14 +80,14 @@ const Addons: FC = () => {
                                 <TabPanel key={i}>
                                     <div className='addons__content'>
                                         <PlatesTemplate>
-                                            <h3>{tabFirst.text}</h3>
+                                            <h3 className='section__content-title section__content-title_addons'>{tabFirst.text}</h3>
                                             <div className='addons__search'>
                                                 <input 
                                                     type="text" 
                                                     className='input'
                                                     placeholder='type to search...'
                                                 />
-                                                <AiOutlineSearch className='search-icon'/>
+                                                <AiOutlineSearch className='icon icon_search'/>
                                             </div>
                                             <div className='addons__upper'>
                                                 <div className='addons__main'>
@@ -73,41 +96,36 @@ const Addons: FC = () => {
                                                         alt="main"
                                                         className='addons__main-img' 
                                                     />
-                                                    <h3 className='addons__main-title'>{tab.text} Title</h3>
+                                                    <h3 className='section__content-title'>{tab.text} Title</h3>
                                                 </div>
                                                 <button className='button'>{tab.btnText}</button>
                                             </div>
                                             {isTableDataFetched 
                                                 ? (
                                                     <div className='addons__table'>
-                                                        <div className='addons__table-upper'>Add-Ons <CgSortAz/></div>
-                                                        <ul className='addons__table-row addons__table-row_header'>
-                                                            <li className='addons__table-item addons__table-item_header'>
-                                                                <input type="checkbox"/>
-                                                            </li>
-                                                            <li className='addons__table-item addons__table-item_header'>Item</li>
-                                                            <li className='addons__table-item addons__table-item_header'>Description</li>
-                                                            <li className='addons__table-item addons__table-item_header'>Discount</li>
+                                                        <div className='section__content-title section__content-title_table'>
+                                                            Add-Ons 
+                                                            <CgSortAz className='icon'/>
+                                                        </div>
+                                                        <ul className='addons__table-header'>
+                                                            {addonsTableHeaderData.map((item, i) => 
+                                                                <li 
+                                                                    key={i}
+                                                                    className='addons__table-header-item'
+                                                                >
+                                                                    {item.title}
+                                                                </li>
+                                                            )}
                                                         </ul>
-                                                        <div className='addons__table-wrapper'>
-                                                            {addonsTableData.map((row, i) => 
-                                                                <ul className='addons__table-row addons__table-row_main' key={i}>
-                                                                    <li className='addons__table-item addons__table-item_input'>
-                                                                        <input type="checkbox"/>
-                                                                    </li>
-                                                                    <li className='addons__table-item'>
-                                                                        <img src="" alt="img" />
-                                                                        <p>{row.title}</p>
-                                                                    </li>
-                                                                    <li className='addons__table-item addons__table-item_input'>
-                                                                        <textarea className='input'></textarea>
-                                                                    </li>
-                                                                    <li className='addons__table-item addons__table-item_input'>
-                                                                        <input type="text" className='input'/>
-                                                                    </li>
-                                                                </ul>
-                                                            )}    
-                                                        </div> 
+                                                        <ListTemplate
+                                                            items={addonsTableContentData}
+                                                            renderItems={(listItem: IAddonsTableContentItem) => 
+                                                                <AddonsListItem 
+                                                                    listItem={listItem} 
+                                                                    key={listItem.id}
+                                                                />
+                                                            }
+                                                        />   
                                                         <div>
                                                             <p>1-10 of 50</p>
                                                             <span><MdArrowForwardIos/></span>
@@ -116,10 +134,10 @@ const Addons: FC = () => {
                                                     </div>
                                                 )
                                                 : (
-                                                    <div className='addons__table-placeholder'>
+                                                    {/* <div className='addons__table-placeholder'>
                                                         <img src="https://img.freepik.com/free-vector/happy-freelancer-with-computer-home-young-man-sitting-armchair-using-laptop-chatting-online-smiling-vector-illustration-distance-work-online-learning-freelance_74855-8401.jpg?t=st=1650539630~exp=1650540230~hmac=64f1be6c67697989c24f571adde1f90f9ae35e33156fcb6b9107545d31480a60&w=1380" alt="" className='addons__table-img'/>
                                                         <h3>Add your first add-on</h3>
-                                                    </div>
+                                                    </div> */}
 
                                                 )
                                             }
@@ -131,7 +149,7 @@ const Addons: FC = () => {
                     </TabPanel>
                 )}
             </TabsTemplate>
-        </section>
+        </PageTemplate>   
     )
 }
 

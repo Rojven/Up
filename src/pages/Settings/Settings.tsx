@@ -1,8 +1,7 @@
 import { FC, useMemo } from 'react';
 import { TabPanel } from 'react-tabs';
 
-import TabsTemplate from '../../components/TabsTemplate/TabsTemplate';
-import { AdvancedSettings, CartPageSettings, CommonSettings, OnPageSettings, PopupSettings, PreferencesSettings } from '../../components';
+import { AdvancedSettings, CartPageSettings, CommonSettings, OnPageSettings, PopupSettings, PreferencesSettings, TabsTemplate, PageTemplate } from '../../components';
 
 import './Settings.scss';
 
@@ -21,11 +20,13 @@ const Settings: FC = () => {
     )
 
     return (
-        <section className='settings'>
-            <h3 className='section-title section-title_addons'>Settings</h3> 
-            <p className='section-subtitle'>Manage and set up the app here</p>
+        <PageTemplate
+            title='Settings'
+            subtitle='Manage and set up the app here'
+            contentClassName='section__content_settings settings'
+        >
             <TabsTemplate 
-                tabClass='tabs tabs_addons'
+                tabClass='tabs'
                 tabsList={settingsTabsData}
             >
                 {settingsTabsData.map((tab, i) =>
@@ -34,7 +35,7 @@ const Settings: FC = () => {
                     </TabPanel>
                 )}
             </TabsTemplate>
-        </section>
+        </PageTemplate>
     )
 }
 

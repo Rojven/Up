@@ -32,10 +32,10 @@
     }
     &__tips {
         display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+        // justify-content: space-around;
+        //flex-wrap: wrap;
         gap: 30px;
-        width: 60%;
+        //width: 60%;
     }
     &__tips-upper {
         display: flex;
@@ -57,11 +57,12 @@
 }
 
 .plate_tips {
-    width: 47%;
+    //width: 47%;
+    margin-bottom: 30px;
 }
 
 .plate_help {
-    width: 38%;
+    //width: 38%;
     min-width: 280px;
     display: flex;
     justify-content: space-between;

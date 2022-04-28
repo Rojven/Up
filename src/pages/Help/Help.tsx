@@ -4,11 +4,19 @@ import { MdOutlineTipsAndUpdates } from 'react-icons/md';
 import { RiExternalLinkLine } from 'react-icons/ri';
 import { FaRegStar } from 'react-icons/fa';
 import { SiMinutemailer } from 'react-icons/si';
+import Masonry from 'react-masonry-css';
 
-import PlatesTemplate from '../../components/PlatesTemplate/PlatesTemplate';
+import { PageTemplate, PlatesTemplate } from '../../components';
 
 import './Help.scss';
 
+const breakpointObj = {
+    default: 2,
+    3000: 3,
+    2000: 2,
+    1000: 1
+    
+}
 
 const Help: FC = () => {
 
@@ -25,9 +33,10 @@ const Help: FC = () => {
     )
 
     return (
-        <section className='help'>
-            <h3 className='section-title section-title_addons'>Help</h3> 
-            <p className='section-subtitle'>We are here for you! See how we can help you</p>
+        <PageTemplate
+            title='Help'
+            subtitle='We are here for you! See how we can help you'
+        >
             <div className="help__wrapper">
                 <PlatesTemplate plateClass='plate_help'>
                     <div>
@@ -49,7 +58,26 @@ const Help: FC = () => {
                         />
                     </div>    
                 </PlatesTemplate>
-                <div className='help__tips'>
+                <Masonry
+                    breakpointCols={breakpointObj}
+                    className="help__tips"
+                >
+                    {helpTipsData.map((tip, i) => 
+                        <PlatesTemplate
+                        key={i} 
+                        plateClass='plate_tips'
+                        >   
+                        <div>
+                                <div className='help__tips-upper'>
+                                    <h4 className='help__tips-title'>{tip.title}</h4>
+                                    <MdOutlineTipsAndUpdates className='help__tips-icon'/>
+                                </div>
+                                <p className='help__tips-text'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae asperiores ipsum et deleniti facilis excepturi qui temporibus sint maxime?</p>
+                        </div>
+                    </PlatesTemplate>
+                    )}
+                </Masonry>
+                {/* <div className='help__tips'>
                     {helpTipsData.map((tip, i) =>
                         <PlatesTemplate
                             key={i} 
@@ -64,9 +92,9 @@ const Help: FC = () => {
                         </div>
                         </PlatesTemplate>
                     )}
+                </div> */}
             </div>
-            </div>
-        </section>
+        </PageTemplate>
     )
 }
 
