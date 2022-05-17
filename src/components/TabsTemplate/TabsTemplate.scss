@@ -3,10 +3,10 @@
     padding: 15px 30px;
     color: var(--text-secondary);
     position: relative;
-    background-color: var(--background-primary);
     outline: none;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    font-size: var(--fontSize-text);
+    font-weight: 900;
     &_notification {
         box-shadow: none;
         background-color: var(--background-secondary);
@@ -25,5 +25,8 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    background-color: var(--background-primary);
+    border-radius: var(--border-radius);
     gap: 10px;
+    overflow-x: auto;
 }

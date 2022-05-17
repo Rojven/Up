@@ -1,44 +1,52 @@
 .section {
+    display: flex;
+    gap: var(--gaps);
+    &_apps {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &_addons,
+    &_dashboard,
+    &_settings {
+        display: block;
+        gap: 0;
+    }
+    &_analytics,
+    &_account {
+        flex-direction: column;
+    }
+    &_settings-tab {
+        flex-direction: column;
+        padding-top: var(--gaps);
+    }
     &__title {
-        font-size: var(--fontSize-title);
         color: var(--text-primary);
-        line-height: 1;
+        font-size: var(--fontSize-subtitle);
     }
     &__subtitle {
         color: var(--text-secondary);
         font-size: var(--fontSize-text);
-        padding-top: 10px;
     }
-    &__content {
-        margin-top: 30px;
+    &__subtext {
+        color: var(--text-secondary);
+        font-size: 16px;
+    }
+    &__link {
+        color: var(--background-acent);
+        font-size: var(--fontSize-text);
+    }
+    &__flex {
         display: flex;
-        gap: 30px;
-        &_account,
-        &_apps {
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        &_addons,
-        &_dashboard,
-        &_settings {
-            display: block;
-            gap: 0;
-        }
-        &_analytics {
-            flex-direction: column;
-        }
+        justify-content: space-between;
+        align-items: center;  
     }
-    &__content-title {
-        color: var(--text-primary);
-        font-size: var(--fontSize-subtitle);
-        &_addons {
-            padding-bottom: 30px;
-        }
-        &_table {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 900;
-        }
+    &__upsell {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        background-color: var(--background-accept);
+        width: fit-content;
+        padding: 3px 7px;
+        border-radius: 7px;
     }
 }

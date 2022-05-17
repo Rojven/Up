@@ -7,8 +7,10 @@ export interface IMenuItem {
     id: number;
 }
 
-export interface IAddonsTableContentItem {
+export interface IAddonsTableItem {
     id: number;
     title: string;
     imgUrl: string;
+    for: string;
+    placement: string;
 }

@@ -1,57 +1,39 @@
 .account {
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        color: var(--text-primary);
-        font-size: var(--fontSize-title);
-        padding-bottom: 100px;
-        h4 {
-            text-align: right;
-            font-size: var(--fontSize-subtitle);
-        }
-        p {
-            font-size: var(--fontSize-text);
-            color: var(--text-secondary);
-        }
-        &_pro {
-            color: inherit;
-            p {
-                color: inherit;
-            }
+    &__upper {
+        text-align: center;
+        width: 100%;
+        h2 {
+            margin-bottom: 10px;
         }
     }
-    &__list {
-        padding: 60px 0;
-        color: inherit;
+    &__wrapper {
         display: flex;
-        flex-direction: column;
-        gap: 30px;
+        justify-content: center;
+        gap: var(--gaps);
+        flex-wrap: wrap;
     }
-    &__list-item {
-        font-size: var(--fontSize-text);
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-    &__footer {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    &__active {
-        background-color: var(--background-accept);
-        padding: 7px 10px;
+    &__card {
+        width: 360px;
+        min-width: 230px;
+        background-color: var(--background-primary);
+        box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
     }
-}
-
-.plate_account {
-    min-width: 280px;
-    max-width: 440px;
-    color: var(--text-secondary);
-    &:last-child {
-        background-color: var(--background-acent);
-        color: var(--background-primary);
+    &__card-upper {
+        width: 100%;
+        background-color: var(--background-alert);
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+        padding: var(--gaps);
+        color: var(--background-acent);
+    }
+    &__card-content {
+        padding: var(--gaps);
+        min-height: 300px;
+    }
+    &__card-footer {
+        padding: var(--gaps);
+        text-align: center;
+        cursor: pointer;
     }
 }

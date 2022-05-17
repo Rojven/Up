@@ -1,11 +1,24 @@
 .plate {
     background-color: var(--background-primary);
-    padding: 30px;
+    padding: var(--gaps);
     border-radius: var(--border-radius);
     min-width: 230px;
     box-shadow: var(--box-shadow);
-    &__icon {
-        display: grid;
-        place-content: center;
+    &_chart {
+        height: 500px;
+    }
+    &_settings {
+        width: fit-content;
+    }
+    &_modal {
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        max-width: 600px;
+        min-width: 300px;
+        display: none;
+        &_active {
+            display: block;
+        }
     }
 }

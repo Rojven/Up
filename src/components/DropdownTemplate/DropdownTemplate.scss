@@ -10,18 +10,19 @@
     cursor: pointer;
     color: var(--text-primary);
     font-size: var(--fontSize-text);
+    border: 1px solid #dcdcdc;
 }
 .dropdown-menu {
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     position: absolute;
     top: 60px;
     left: 0;
     width: 100%;
     border-radius: var(--border-radius);
     padding: 20px;
-    box-shadow: var(--box-shadow);
     color: var(--text-secondary);
     z-index: 3;
+    border: 1px solid #dcdcdc;
 }
 .dropdown-control {
     width: 100%;

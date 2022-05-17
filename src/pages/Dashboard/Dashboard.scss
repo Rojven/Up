@@ -1,9 +1,16 @@
 .dashboard { 
     &__wrapper {
         display: flex;
-        gap: 30px;
+        gap: var(--gaps);
+        justify-content: space-between;
     }
     &__item {
-        padding-bottom: 30px;
+        padding-bottom: var(--gaps);
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+    &__column {
+        width: 49% !important;
     }
 }

@@ -11,19 +11,32 @@
 
 :root {
     --background-primary: #ffffff;
-    --background-secondary: #fafbfc;
-    --background-acent: #2c00af;
-    --background-alert: #ffe2e5;
-    --background-accept: #dcfce7;
-    --background-caution: #fff4de;
+    --background-secondary: #f3f5f8;
+    --background-acent: #04016a;
+    --background-alert: #9c9eec;
+    --background-accept: #b0f5ba;
+    --background-caution: #ffe8bb;
     --text-disabled: rgb(221, 221, 221);
-    --text-primary: #151d48;
-    --text-secondary: #4b4b69;
+    --text-primary: #111840;
+    --text-secondary: #41415a;
     --fontSize-title: min(max(28px,4vw),70px);
-    --fontSize-subtitle: min(max(23px,0.8vw),50px);
+    --fontSize-subtitle: min(max(21px,0.8vw),50px);
     --fontSize-text: min(max(18px,1vw),30px);
-    --border-radius: 30px;
+    --border-radius: 15px;
+    --gaps: 30px;
     --box-shadow: 0px 3px 25px 0px rgb(34 60 80 / 5%);
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+::-webkit-scrollbar-track {
+    border-radius: var(--border-radius);
+}
+::-webkit-scrollbar-thumb {
+    background-color: #dcdcdc;
+    border-radius: var(--border-radius);
 }
   
 body {
@@ -46,22 +59,16 @@ a {
 
 .app {
     min-height: 100vh;
-    width: 100%;
     position: relative;
-    display: flex;
-    justify-content: space-between;
     background: var(--background-secondary);
 }
 
 .main {
-    width: 100%;
-    height: 100%;
-    z-index: 999;
+    margin-left: 250px;
 }
 
 .content {
-    margin: 30px;
-    min-height: 100vh;
+    padding: var(--gaps);
 }
 
 .input {
@@ -69,8 +76,26 @@ a {
     border-radius: var(--border-radius);
     height: 100%;
     width: 100%;
-    padding: 0 30px;
-    border: none;
+    padding: 0 var(--gaps);
+    border: 1px solid #dcdcdc;
+    &_table {
+        border: 1px solid #dcdcdc;
+        width: 60px;
+        padding: 3px 7px;
+    }
+    &_textarea {
+        resize: none;
+        min-height: 200px;
+        max-width: 900px;
+        margin-top: 10px;
+        display: block;
+        padding: 30px;
+    }
+    &_light {
+        border: none;
+        background-color: var(--background-primary);
+        box-shadow: var(--box-shadow);
+    }
 }
 
 .button {
@@ -98,6 +123,22 @@ a {
     }
 }
 
+.checkbox {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.date {
+    border-radius: var(--border-radius);
+    border: 2px solid var(--background-acent);
+    padding: 7px;
+    color: var(--text-secondary);
+    font-size: var(--fontSize-text);
+    background-color: transparent;
+}
+
 .icon {
     display: grid;
     place-content: center;
@@ -109,6 +150,41 @@ a {
         position: absolute;
         top: 15px;
         right: 15px;     
+    }
+    &_header {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    &_table {
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
+    }
+    &_info {
+        width: 25px;
+        height: 25px;
+        min-width: 25px;
+    }
+    &_account {
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        color: var(--background-acent);
+    }
+    &_cancel {
+        color: var(--text-secondary);
+    }
+    &_advanced {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+    }
+    &_sortable {
+        color: var(--text-disabled);
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
     }
 }
 

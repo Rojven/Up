@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { TabPanel } from 'react-tabs';
 
-import PlatesTemplate from '../PlatesTemplate/PlatesTemplate';
-import TabsTemplate from '../TabsTemplate/TabsTemplate';
+import { TabsTemplate, ModalsTemplate} from '../../components';
+
 
 import './Notification.scss';
 
@@ -18,7 +18,7 @@ const notificationTabsData = [
 
 const Notification: FC<NotificationProps> = ({ notification }) => {
     return (
-        <PlatesTemplate plateClass={notification ? 'plate_notification plate_notification_active' : 'plate_notification'}>
+        <ModalsTemplate modalState={notification}>
             <TabsTemplate 
                 tabClass='tabs tabs_notification' 
                 tabsList={notificationTabsData}
@@ -26,11 +26,11 @@ const Notification: FC<NotificationProps> = ({ notification }) => {
             >
                 {notificationTabsData.map((tab, i) =>
                     <TabPanel key={i}>
-                        <h2>{tab.text}</h2>
+                        <h2 className='section__title' style={{paddingTop: '30px'}}>{tab.text}</h2>
                     </TabPanel>
                 )}
             </TabsTemplate>
-        </PlatesTemplate>  
+        </ModalsTemplate>
     )
 }
 

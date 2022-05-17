@@ -1,0 +1,87 @@
+.table-wrapper {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    max-height: 65vh;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    &__thead {
+        text-align: left;
+        color: var(--text-primary);
+        font-size: var(--fontSize-text);
+        background-color: var(--background-primary);
+        position: sticky;
+        top: 0;
+        z-index: 6;
+        //box-shadow: 0 10px 35px -2px var(--background-primary);
+        th {
+            padding: 13px 0;
+            &:hover {
+                .icon_sortable {
+                    color: inherit;
+                }
+            }
+            &:first-child {
+                display: flex !important;
+                justify-content: center;
+            }
+        }
+    }
+    &__tbody {
+        color: var(--text-secondary);
+        font-size: var(--fontSize-text);
+    }
+    &__row {
+        height: 40px;
+        td,
+        th {
+            min-width: 150px;
+            &:first-child {
+                min-width: 45px;
+                text-align: center;
+                position: sticky;
+                left: 0;
+                background-color: var(--background-primary);
+                z-index: 5;
+            }
+        }
+    }
+    &__pagination {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: var(--gaps);
+        gap: 10px; 
+        color: var(--text-secondary);
+        font-size: var(--fontSize-text);
+        flex-wrap: wrap;
+        div {
+            display: flex;
+            gap: 10px;  
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        span {
+            align-self: center;
+        }
+        select {
+            border: 2px solid var(--background-acent);
+            border-radius: var(--border-radius);
+            color: var(--text-secondary);
+            font-size: var(--fontSize-text);
+        }
+    }
+    &__product-box {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    &__product-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        object-fit: cover;
+    }
+}

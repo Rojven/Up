@@ -2,19 +2,37 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top: var(--gaps);
+    gap: var(--gaps);
     &__item {
         width: 30%;
-        height: 200px;
+        min-height: 200px;
         min-width: 200px;
         border-radius: var(--border-radius);
-        &_one {
+        padding: 15px;
+        background-color: var(--background-alert);
+        &:nth-child(1) {
             background-color: var(--background-alert);
         }
-        &_two {
+        &:nth-child(2) {
             background-color: var(--background-caution);
         }
-        &_three {
+        &:nth-child(3) {
             background-color: var(--background-accept);
         }
+    }
+    &__icon-box {
+        display: inline-block;
+        padding: 15px;
+        border-radius: var(--border-radius);
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+    }
+    &__info {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 7px;
     }
 }

@@ -1,22 +1,25 @@
 import { FC } from 'react';
 
-import { IAddonsTableContentItem } from '../../types/types';
+import { IAddonsTableItem } from '../../types/types';
+
+import './AddonsListItem.scss';
 
 interface AddonsListItemProps {
-    listItem: IAddonsTableContentItem;
+    listItem: IAddonsTableItem;
 }
 
 const AddonsListItem: FC<AddonsListItemProps> = ({ listItem }) => {
     return (
-        <li>
-            <input type="checkbox"/>
+        <tr className='addons__item'>
             <div>
                 <img src={listItem.imgUrl} alt="img" />
                 <p>{listItem.title}</p>
             </div>
-            <textarea></textarea>
-            <input type="text"/>
-        </li>
+            <textarea className='input'></textarea>
+            <input className='input' type="number"/>
+            <p>{listItem.placement}</p>
+            <p>{listItem.for}</p>
+        </tr>
     )
 }
 
